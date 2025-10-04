@@ -75,7 +75,7 @@ const Checkout = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="nombre">Nombre completo</Label>
+                  <Label htmlFor="nombre">Ñande térã</Label>
                   <Input
                     id="nombre"
                     value={formData.nombre}
@@ -87,7 +87,7 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Correo electrónico</Label>
+                  <Label htmlFor="email">Correo</Label>
                   <Input
                     id="email"
                     type="email"
@@ -100,26 +100,26 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="telefono">Teléfono</Label>
+                  <Label htmlFor="telefono">Pumbyry</Label>
                   <Input
                     id="telefono"
                     value={formData.telefono}
                     onChange={(e) =>
                       setFormData({ ...formData, telefono: e.target.value })
                     }
-                    placeholder="+56 9 1234 5678"
+                    placeholder="+595 981 234 567"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="direccion">Dirección de entrega</Label>
+                  <Label htmlFor="direccion">Dirección</Label>
                   <Input
                     id="direccion"
                     value={formData.direccion}
                     onChange={(e) =>
                       setFormData({ ...formData, direccion: e.target.value })
                     }
-                    placeholder="Av. Principal 123, Santiago"
+                    placeholder="Av. Eusebio Ayala, Asunción"
                   />
                 </div>
 
@@ -143,7 +143,7 @@ const Checkout = () => {
                       {item.nombre} x{item.cantidad}
                     </span>
                     <span className="font-semibold text-foreground">
-                      ${(item.precio * item.cantidad).toLocaleString("es-CL")}
+                      ₲{(item.precio * item.cantidad).toLocaleString("es-PY")}
                     </span>
                   </div>
                 ))}
@@ -151,7 +151,7 @@ const Checkout = () => {
                   <div className="flex justify-between text-xl font-bold">
                     <span className="text-foreground">Total</span>
                     <span className="text-primary">
-                      ${getTotal().toLocaleString("es-CL")}
+                      ₲{getTotal().toLocaleString("es-PY")}
                     </span>
                   </div>
                 </div>

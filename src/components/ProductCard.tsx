@@ -18,16 +18,26 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Card className="hover:shadow-lg transition-all duration-300 border-border">
-      <CardContent className="pt-6">
-        <div className="mb-4">
+    <Card className="hover:shadow-lg transition-all duration-300 border-border overflow-hidden">
+      <div className="aspect-square overflow-hidden">
+        <img 
+          src={product.imagen} 
+          alt={product.nombre}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <CardContent className="pt-4">
+        <div className="mb-2">
           <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">
             {product.categoria}
           </span>
         </div>
-        <h3 className="font-semibold text-lg mb-2 text-foreground">{product.nombre}</h3>
+        <h3 className="font-semibold text-lg mb-1 text-foreground line-clamp-2">{product.nombre}</h3>
+        {product.descripcion && (
+          <p className="text-xs text-muted-foreground mb-2">{product.descripcion}</p>
+        )}
         <p className="text-2xl font-bold text-primary">
-          ${product.precio.toLocaleString("es-CL")}
+          ₲{product.precio.toLocaleString("es-PY")}
         </p>
       </CardContent>
       <CardFooter>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChefHat, Clock, Heart } from "lucide-react";
-import heroImage from "@/assets/hero-food.jpg";
+import heroImage from "@/assets/hero-ylcom.jpg";
 
 const Home = () => {
   return (
@@ -19,10 +19,10 @@ const Home = () => {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 text-balance">
-            Sabores del Día
+            Ylcom
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 text-balance">
-            Comida casera preparada con amor, para endulzar tu día
+            Comida paraguaya preparada con amor, para alegrar tu día
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/catalogo">

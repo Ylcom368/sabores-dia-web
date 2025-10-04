@@ -39,7 +39,7 @@ const Cart = () => {
                     <h3 className="font-semibold text-lg text-foreground">{item.nombre}</h3>
                     <p className="text-sm text-muted-foreground">{item.categoria}</p>
                     <p className="text-primary font-bold mt-1">
-                      ${item.precio.toLocaleString("es-CL")}
+                      ₲{item.precio.toLocaleString("es-PY")}
                     </p>
                   </div>
 
@@ -76,7 +76,7 @@ const Cart = () => {
 
                 <div className="mt-4 pt-4 border-t border-border">
                   <p className="text-right font-semibold text-foreground">
-                    Subtotal: ${(item.precio * item.cantidad).toLocaleString("es-CL")}
+                    Subtotal: ₲{(item.precio * item.cantidad).toLocaleString("es-PY")}
                   </p>
                 </div>
               </CardContent>
@@ -92,7 +92,7 @@ const Cart = () => {
             <div className="space-y-2">
               <div className="flex justify-between text-muted-foreground">
                 <span>Subtotal</span>
-                <span>${getTotal().toLocaleString("es-CL")}</span>
+                <span>₲{getTotal().toLocaleString("es-PY")}</span>
               </div>
               <div className="flex justify-between text-muted-foreground">
                 <span>Envío</span>
@@ -101,7 +101,7 @@ const Cart = () => {
               <div className="border-t border-border pt-2 mt-2">
                 <div className="flex justify-between text-xl font-bold text-foreground">
                   <span>Total</span>
-                  <span className="text-primary">${getTotal().toLocaleString("es-CL")}</span>
+                  <span className="text-primary">₲{getTotal().toLocaleString("es-PY")}</span>
                 </div>
               </div>
             </div>

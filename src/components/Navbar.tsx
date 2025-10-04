@@ -27,10 +27,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">SD</span>
+              <span className="text-primary-foreground font-bold text-lg">Y</span>
             </div>
             <span className="font-bold text-xl text-foreground hidden sm:inline">
-              Sabores del Día
+              Ylcom
             </span>
           </Link>
 

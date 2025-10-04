@@ -48,14 +48,14 @@ const Contact = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="nombre">Nombre</Label>
+                  <Label htmlFor="nombre">Ñande</Label>
                   <Input
                     id="nombre"
                     value={formData.nombre}
                     onChange={(e) =>
                       setFormData({ ...formData, nombre: e.target.value })
                     }
-                    placeholder="Tu nombre"
+                    placeholder="Nde réra"
                   />
                 </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    placeholder="tu@email.com"
+                    placeholder="nde@correo.com"
                   />
                 </div>
 
@@ -103,7 +103,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-foreground">Teléfono</h3>
-                    <p className="text-muted-foreground">+56 9 1234 5678</p>
+                    <p className="text-muted-foreground">+595 981 234 567</p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Lun - Sáb: 8:00 AM - 10:00 PM
                     </p>
@@ -119,8 +119,8 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1 text-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@saboresdeldia.cl</p>
+                    <h3 className="font-semibold text-lg mb-1 text-foreground">Correo</h3>
+                    <p className="text-muted-foreground">info@ylcom.com.py</p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Respuesta en 24 horas
                     </p>
@@ -138,9 +138,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-foreground">Dirección</h3>
                     <p className="text-muted-foreground">
-                      Av. Principal 123
+                      Av. Eusebio Ayala
                       <br />
-                      Santiago, Chile
+                      Asunción, Paraguay
                     </p>
                   </div>
                 </div>

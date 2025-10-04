@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-foreground">Sabores del Día</h3>
+            <h3 className="font-bold text-lg mb-4 text-foreground">Ylcom</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Tu local de confianza para disfrutar los mejores sabores caseros. 
+              Tu local de confianza para disfrutar los mejores sabores paraguayos. 
               Comida fresca y deliciosa todos los días.
             </p>
           </div>
@@ -20,15 +20,15 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+56 9 1234 5678</span>
+                <span>+595 981 234 567</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@saboresdeldia.cl</span>
+                <span>info@ylcom.com.py</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Av. Principal 123, Santiago</span>
+                <span>Av. Eusebio Ayala, Asunción</span>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Sabores del Día. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Ylcom. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
