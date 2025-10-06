@@ -17,12 +17,13 @@ const Checkout = () => {
     email: "",
     telefono: "",
     direccion: "",
+    metodoPago: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.nombre || !formData.email || !formData.telefono || !formData.direccion) {
+    if (!formData.nombre || !formData.email || !formData.telefono || !formData.direccion || !formData.metodoPago) {
       toast.error("Por favor completa todos los campos");
       return;
     }
@@ -119,8 +120,32 @@ const Checkout = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, direccion: e.target.value })
                     }
-                    placeholder="Av. Eusebio Ayala, Asunción"
+                    placeholder="Leonardo Salinas Km 20, Capiatá"
                   />
+                </div>
+
+                <div>
+                  <Label htmlFor="metodoPago">Método de Pago</Label>
+                  <div className="space-y-2 mt-2">
+                    {["Transferencia bancaria", "Pago en efectivo", "Tarjeta de débito/crédito", "Pago QR"].map((metodo) => (
+                      <label 
+                        key={metodo}
+                        className="flex items-center space-x-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                      >
+                        <input
+                          type="radio"
+                          name="metodoPago"
+                          value={metodo}
+                          checked={formData.metodoPago === metodo}
+                          onChange={(e) =>
+                            setFormData({ ...formData, metodoPago: e.target.value })
+                          }
+                          className="w-4 h-4 text-primary"
+                        />
+                        <span className="text-foreground">{metodo}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
                 <Button type="submit" className="w-full" size="lg">

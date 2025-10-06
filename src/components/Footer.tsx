@@ -20,7 +20,14 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+595 981 234 567</span>
+                <a 
+                  href="https://wa.me/595982644099" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  +595 982 644099
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -28,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Av. Eusebio Ayala, Asunción</span>
+                <span>Leonardo Salinas Km 20, Capiatá</span>
               </div>
             </div>
           </div>

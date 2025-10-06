@@ -102,8 +102,15 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1 text-foreground">Teléfono</h3>
-                    <p className="text-muted-foreground">+595 981 234 567</p>
+                    <h3 className="font-semibold text-lg mb-1 text-foreground">Teléfono / WhatsApp</h3>
+                    <a 
+                      href="https://wa.me/595982644099" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      +595 982 644099
+                    </a>
                     <p className="text-sm text-muted-foreground mt-1">
                       Lun - Sáb: 8:00 AM - 10:00 PM
                     </p>
@@ -138,9 +145,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-foreground">Dirección</h3>
                     <p className="text-muted-foreground">
-                      Av. Eusebio Ayala
+                      Leonardo Salinas Km 20
                       <br />
-                      Asunción, Paraguay
+                      Capiatá, Paraguay
                     </p>
                   </div>
                 </div>
