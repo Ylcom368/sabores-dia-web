@@ -40,27 +40,27 @@ import medialunaImg from "@/assets/products/medialuna.jpg";
 
 export const productos: Product[] = [
   // Desayuno
-  { id: 1, categoria: "Desayuno", nombre: "Mixto", precio: 5000, imagen: mixtoImg },
-  { id: 2, categoria: "Desayuno", nombre: "Omelette", precio: 7000, imagen: omeletteImg },
+  { id: 1, categoria: "Desayuno", nombre: "Mixto", precio: 5000, imagen: "/images/mixto.jpeg" },
+  { id: 2, categoria: "Desayuno", nombre: "Omelette", precio: 7000, imagen: "/images/omelette.jpeg" },
   { id: 3, categoria: "Desayuno", nombre: "Café negro", precio: 6000, imagen: cafeNegroImg },
-  { id: 4, categoria: "Desayuno", nombre: "Café con leche", precio: 5000, imagen: cafeLecheImg },
-  { id: 5, categoria: "Desayuno", nombre: "Cocido negro", precio: 6000, imagen: cocidoNegroImg },
+  { id: 4, categoria: "Desayuno", nombre: "Café con leche", precio: 5000, imagen: "/images/cafeconleche.jpeg" },
+  { id: 5, categoria: "Desayuno", nombre: "Cocido negro", precio: 6000, imagen: "/images/cocidonegro.jpeg" },
   { id: 6, categoria: "Desayuno", nombre: "Cocido con leche", precio: 5000, imagen: cocidoLecheImg },
   
   // Minutas
-  { id: 7, categoria: "Minutas", nombre: "Empanadas de carne, pollo, jamón y queso", precio: 4000, imagen: empanadasFritasImg },
-  { id: 8, categoria: "Minutas", nombre: "Sandwich de milanesa de pollo", precio: 8000, imagen: sandwichMilanesaPolloImg },
+  { id: 7, categoria: "Minutas", nombre: "Empanadas de carne, pollo, jamón y queso", precio: 4000, imagen: "/images/empanadafrita.jpeg" },
+  { id: 8, categoria: "Minutas", nombre: "Sandwich de milanesa de pollo", precio: 8000, imagen: "/images/sandwichpollo.jpeg" },
   { id: 9, categoria: "Minutas", nombre: "Sandwich de milanesa de carne", precio: 9000, imagen: sandwichMilanesaCarneImg },
   { id: 10, categoria: "Minutas", nombre: "Villarroel", precio: 4000, imagen: villarroelImg },
   { id: 11, categoria: "Minutas", nombre: "Croqueta", precio: 5000, imagen: croquetaImg },
-  { id: 12, categoria: "Minutas", nombre: "Tortilla", precio: 5000, imagen: tortillaImg },
-  { id: 13, categoria: "Minutas", nombre: "Empanadas al horno de carne, pollo, jamón y queso", precio: 5000, imagen: empanadasHornoImg },
+  { id: 12, categoria: "Minutas", nombre: "Tortilla", precio: 5000, imagen: "/images/tortilla.jpeg" },
+  { id: 13, categoria: "Minutas", nombre: "Empanadas al horno de carne, pollo, jamón y queso", precio: 5000, imagen: "/images/empanadahorno.jpeg" },
   
   // Comidas típicas
-  { id: 14, categoria: "Comidas típicas", nombre: "Empanadas de mandioca", precio: 5000, imagen: empanadaMandiocaImg },
-  { id: 15, categoria: "Comidas típicas", nombre: "Chipa so'o", precio: 5000, imagen: chipaSooImg },
-  { id: 16, categoria: "Comidas típicas", nombre: "Sopa porción", precio: 5000, imagen: sopaImg },
-  { id: 17, categoria: "Comidas típicas", nombre: "Payaguá", precio: 5000, imagen: payaguaImg },
+  { id: 14, categoria: "Comidas típicas", nombre: "Empanadas de mandioca", precio: 5000, imagen: "/images/empanadamandioca.jpeg" },
+  { id: 15, categoria: "Comidas típicas", nombre: "Chipa so'o", precio: 5000, imagen: "/images/chipa-soo.jpg" },
+  { id: 16, categoria: "Comidas típicas", nombre: "Sopa porción", precio: 5000, imagen: "/images/sopa.jpeg" },
+  { id: 17, categoria: "Comidas típicas", nombre: "Payaguá", precio: 5000, imagen: "/images/payagua.jpeg" },
   
   // Almuerzo
   { id: 18, categoria: "Almuerzo", nombre: "Tallarín de carne o pollo", precio: 20000, imagen: tallarinImg, descripcion: "Sin guarnición" },
