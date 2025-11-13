@@ -7,11 +7,13 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Checkout = () => {
   const { cart, getTotal, clearCart } = useCart();
   const navigate = useNavigate();
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [orderNumber, setOrderNumber] = useState("");
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -20,7 +22,13 @@ const Checkout = () => {
     metodoPago: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const generateOrderNumber = () => {
+    const timestamp = Date.now();
+    const random = Math.floor(Math.random() * 1000);
+    return `ORD-${timestamp}-${random}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.nombre || !formData.email || !formData.telefono || !formData.direccion || !formData.metodoPago) {
@@ -28,10 +36,31 @@ const Checkout = () => {
       return;
     }
 
-    // Simulate payment
-    setPaymentSuccess(true);
-    clearCart();
-    toast.success("¡Pago realizado con éxito!");
+    try {
+      const newOrderNumber = generateOrderNumber();
+      
+      const { error } = await supabase.from("orders").insert({
+        order_number: newOrderNumber,
+        customer_name: formData.nombre,
+        customer_email: formData.email,
+        customer_phone: formData.telefono,
+        customer_address: formData.direccion,
+        payment_method: formData.metodoPago,
+        items: cart,
+        total_amount: getTotal(),
+        status: "Pendiente",
+      });
+
+      if (error) throw error;
+
+      setOrderNumber(newOrderNumber);
+      setPaymentSuccess(true);
+      clearCart();
+      toast.success("¡Pedido realizado con éxito!");
+    } catch (error) {
+      console.error("Error al guardar el pedido:", error);
+      toast.error("Error al procesar el pedido. Por favor intenta de nuevo.");
+    }
   };
 
   if (cart.length === 0 && !paymentSuccess) {
@@ -40,6 +69,10 @@ const Checkout = () => {
   }
 
   if (paymentSuccess) {
+    const whatsappNumber = "595982644099";
+    const whatsappMessage = `Hola, acabo de hacer un pedido. Mi Nro. de orden es: ${orderNumber}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
     return (
       <div className="min-h-screen flex items-center justify-center py-12">
         <Card className="max-w-md w-full mx-4">
@@ -48,14 +81,35 @@ const Checkout = () => {
               <CheckCircle2 className="h-12 w-12 text-primary" />
             </div>
             <h2 className="text-3xl font-bold mb-4 text-foreground">
-              ¡Pago Realizado con Éxito!
+              ¡Pedido Realizado con Éxito!
             </h2>
-            <p className="text-muted-foreground mb-8">
-              Tu pedido ha sido confirmado. Te contactaremos pronto con los detalles de entrega.
-            </p>
-            <Button onClick={() => navigate("/")} size="lg" className="w-full">
-              Volver al Inicio
-            </Button>
+            <div className="mb-6">
+              <p className="text-lg font-semibold text-foreground mb-2">
+                Número de Orden: {orderNumber}
+              </p>
+              <p className="text-muted-foreground">
+                Su pedido ya está reservado. Haga clic aquí para comunicarse con nosotros.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-green-600 hover:bg-green-700"
+              >
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  Contactar por WhatsApp
+                </a>
+              </Button>
+              <Button
+                onClick={() => navigate("/")}
+                variant="outline"
+                size="lg"
+                className="w-full"
+              >
+                Volver al Inicio
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </div>
